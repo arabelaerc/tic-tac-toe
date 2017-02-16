@@ -13,34 +13,47 @@ $(document).ready(function() {
    document.getElementById("play2").innerHTML = localStorage.getItem("playerTwo");
 });
 //function setButtonText( button , cambioTurno ){
-//    button.text(cambioTurno);
+//s button.text(cambioTurno);
 //}
+//var cambioTurno = turno ? 'X' : 'O';
+//setButtonText( button, cambioTurno );
 //Set Game Icons to table
-var turno = true;
+var turno = 0;
 var counter1 = 0;
 var counter2 = 0;
+var x = '<span class="x">X</span>';
+var o = '<span class="o">O</span>';
 
 $(".button-player").click(function( event ){
     var button = $(event.target);
-    //var cambioTurno = turno ? 'X' : 'O';
-    //setButtonText( button, cambioTurno );
-    if (turno == true){
-      button.text("X");
+    if (turno%2 == 0){
+      button.append(x);
       counter1++;
       $("#counter1").text(counter1);
     }
-    else if (turno == false){
-      button.text("O");
+    else{
+      button.append(o);
       counter2++;
       $("#counter2").text(counter2);
-    }else{};
-
-    if ($(".one").val() == 'X' && $(".two").val() == 'X' && $(".three").val() == 'X'){
-        alert("win");
     }
-
     turno = !turno;
+
+    if ($(".one").children().hasClass("x") && $(".two").children().hasClass("x") && $(".three").children().hasClass("x") ||
+     $(".four").children().hasClass("x") && $(".five").children().hasClass("x") && $(".six").children().hasClass("x") ||
+      $(".seven").children().hasClass("x") && $(".eight").children().hasClass("x") && $(".nine").children().hasClass("x")||
+      $(".one").children().hasClass("x") && $(".five").children().hasClass("x") && $(".nine").children().hasClass("x")||
+      $(".three").children().hasClass("x") && $(".five").children().hasClass("x") && $(".seven").children().hasClass("x")){
+  	    alert('X ganó')
+     }
+    else if ($(".one").children().hasClass("o") && $(".two").children().hasClass("o") && $(".three").children().hasClass("o") ||
+     $(".four").children().hasClass("o") && $(".five").children().hasClass("o") && $(".six").children().hasClass("o") ||
+      $(".seven").children().hasClass("o") && $(".eight").children().hasClass("o") && $(".nine").children().hasClass("o")||
+      $(".one").children().hasClass("o") && $(".five").children().hasClass("o") && $(".nine").children().hasClass("o")||
+      $(".three").children().hasClass("o") && $(".five").children().hasClass("o") && $(".seven").children().hasClass("o")) {
+        alert('O ganó')
+    }
 });
+
 
 //Get names of players first screen
 document.getElementById("button-send").onclick = function(e){

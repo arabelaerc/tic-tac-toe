@@ -36,6 +36,14 @@ div.names-players{
     }
   }
 }
+/*Winner Annoucement contain*/
+.winner-player{
+  visibility: hidden;
+  opacity: 0s;
+  &.show{
+    opacity: 1s;
+  }
+}
 /*Anchors*/
 /* Button*/
 .box{

@@ -26,6 +26,13 @@ div.names-players {
     font-size: 1rem;
     border: 1px solid black; }
 
+/*Winner Annoucement contain*/
+.winner-player {
+  visibility: hidden;
+  opacity: 0s; }
+  .winner-player.show {
+    opacity: 1s; }
+
 /*Anchors*/
 /* Button*/
 .box button {
