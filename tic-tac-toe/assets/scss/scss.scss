@@ -1,0 +1,163 @@
+// Variables Colors
+$gray : #D3D3D3;
+$gray-dark:#2b2f33;
+$gray-light:#999999;
+// General Styles of headings,parragraph
+h1,h2,h3,h4,h5,h6,p,span,article,a,input,button{
+  font-family: 'Pangolin', cursive;
+  color:$gray-dark;
+}
+button,
+a{
+  font-size: 1rem;
+  text-decoration:none;
+  cursor: pointer;
+}
+/*Position styles of text and divs*/
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+//Style second screen
+div.names-players{
+  width:100%;
+  p{
+    label{
+      font-size: 1.5rem;
+    }
+    .input-player{
+      font-size:1rem;
+      border:1px solid black;
+    }
+  }
+}
+/*Anchors*/
+/* Button*/
+.box{
+  button{
+    width:100%;
+  }
+  .button-player{
+    font-size:3rem;
+    height: 3rem;
+    border:none;
+    background-color: transparent;
+    &:focus{
+      outline:none;
+    }
+  }
+}
+input#button-send{
+  padding:1% !important;
+  font-size: 1.1rem;
+}
+input#button-send:disabled{
+  color : $gray-light;
+  border:1px solid $gray-light;
+}
+button,
+input#button-send{
+  padding:0.5%;
+  transition: 0.5s;
+  border-style:outset;
+  border: 1px solid black;
+  background-color:transparent;
+  &:hover{
+    transition: 0.5s;
+    background-color: grayscale($gray);
+  }
+}
+/*Flexbox*/
+.aside-contain > .main-contain-aside{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-content: flex-start;
+}
+.principal-content > .main-contain {
+  h1{
+    font-size: 2rem;
+    margin-bottom: 6rem;
+  };
+  display:flex;
+  flex-wrap: nowrap;
+  margin-top: 5rem;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+/*Title Turn*/
+.turn-title,
+.turn-title-player{
+  font-size: 1.8rem;
+}
+/*Boxes*/
+.main-contain-box{
+  width:100%;
+}
+.first-content-box,
+.second-content-box,
+.third-content-box{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  .box{
+    width: 4rem;
+    height: 3rem;
+    padding: 1%;
+    float: left;
+  }
+  .fs-f-x-o{
+    font-size:2rem;
+  }
+}
+
+.first-content-box,
+.second-content-box{
+  .box{
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3){
+      border-bottom:4px solid $gray-dark;
+    }
+    &:nth-child(1),
+    &:nth-child(2){
+      border-right:4px solid $gray-dark ;
+    }
+  }
+}
+.third-content-box{
+  .box{
+    &:nth-child(2){
+      border-right:4px solid $gray-dark ;
+      border-left:4px solid $gray-dark ;
+    }
+  }
+}
+.content-of-players{
+  margin-top: 4%;
+}
+
+//Breakpoints
+
+@media (min-width: 1000px) {
+  .hide-lg{
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .hide-sm{
+    display: none;
+  }
+}
